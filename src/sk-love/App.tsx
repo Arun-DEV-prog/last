@@ -18535,24 +18535,24 @@ const [isPartyGiftPopupOpen, setIsPartyGiftPopupOpen] = useState<boolean>(false)
                         )}
                       </button>
 
-                      {/* Label + ⭐ coins on ONE line */}
-                      <div className="mt-1.5 flex items-center justify-center gap-1 max-w-[92px]">
+                      {/* Label + ⭐ coins on ONE line — Layered above avatar frames with z-40 and high contrast */}
+                      <div className="relative z-40 mt-1 flex items-center justify-center gap-1 max-w-[96px] px-1.5 py-0.5 rounded-full bg-black/60 backdrop-blur-[2px] border border-white/10 shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
                         {effOccupant ? (
-                          <span className="text-[10.5px] font-bold truncate text-white leading-tight">
+                          <span className="text-[10.5px] font-bold truncate text-white leading-tight drop-shadow-[0_1px_2px_rgba(0,0,0,0.9)]">
                             {isCrown ? String(effOccupant).split(" ")[0] : effOccupant}
                           </span>
                         ) : (
-                          <span className="text-[11px] font-bold text-white/45 leading-none">
+                          <span className="text-[11px] font-bold text-white/50 leading-none drop-shadow-[0_1px_2px_rgba(0,0,0,0.9)]">
                             {isCrown ? "" : idx}
                           </span>
                         )}
-                        <span className={`flex items-center gap-0.5 text-[10px] font-black tabular-nums leading-none ${effOccupant ? "text-amber-300" : "text-white/30"}`}>
+                        <span className={`flex items-center gap-0.5 text-[10px] font-black tabular-nums leading-none ${effOccupant ? "text-amber-300 drop-shadow-[0_1px_2px_rgba(0,0,0,0.9)]" : "text-white/40"}`}>
                           <span className="text-[9px] leading-none">⭐</span>
                           {formatCoinValue(effOccupant ? seatCoins : 0)}
                         </span>
                       </div>
                       {isCrown && (
-                        <span className="text-[8px] font-black uppercase tracking-widest text-amber-300/80">Host</span>
+                        <span className="relative z-40 text-[8px] font-black uppercase tracking-widest text-amber-300/90 drop-shadow-[0_1px_2px_rgba(0,0,0,0.9)] mt-0.5">Host</span>
                       )}
 
                     </div>
