@@ -1,8 +1,8 @@
 // @ts-nocheck
 // Centralized Laravel API client for SK Love.
-// Primary API: https://api.keno70.com
+// Primary API: uses VITE_API_BASE_URL environment variable
 
-export const DEFAULT_PRIMARY_API = "https://api.keno70.com";
+export const DEFAULT_PRIMARY_API = import.meta.env.VITE_API_BASE_URL || "http://168.144.140.4";
 export const DEFAULT_BACKUP_API = "";
 
 export function getBackendCandidates(): string[] {
