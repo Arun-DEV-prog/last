@@ -108,7 +108,7 @@ const formatCompactBalance = (num: number): string => {
   return `${num}`;
 };
 
-const SOCKET_URL = (import.meta as any).env?.VITE_SOCKET_URL || "https://168-144-140-4.sslip.io";
+const SOCKET_URL = (import.meta as any).env?.VITE_SOCKET_URL || "https://168.144.140.4.nip.io";
 const TEEN_PATTI_BALANCE_ENDPOINT = "/api/games/teenpatti/balance";
 
 // ─── Main Component ──────────────────────────────────────────────────────────
@@ -260,7 +260,10 @@ export default function TeenPattiGame({
 
     const startPing = Date.now();
     const socket = io(SOCKET_URL, {
-      transports: ["polling"],
+      transports: ["websocket", "polling"],
+      path: "/socket.io/",
+      secure: true,
+      reconnection: true,
       reconnectionDelay: 1000,
       reconnectionAttempts: 30,
     });

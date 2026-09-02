@@ -221,7 +221,7 @@ export default function FerryWheelGame({
   // Socket.io Real-Time Integration
   useEffect(() => {
     const socketUrl =
-      (import.meta as any).env?.VITE_SOCKET_URL || "https://168-144-140-4.sslip.io";
+      (import.meta as any).env?.VITE_SOCKET_URL || "https://168.144.140.4.nip.io";
 
     const token =
       localStorage.getItem("token") ||
@@ -235,7 +235,10 @@ export default function FerryWheelGame({
     } catch {}
 
     const socket = io(socketUrl, {
-      transports: ["polling"],
+      transports: ["websocket", "polling"],
+      path: "/socket.io/",
+      secure: true,
+      reconnection: true,
       reconnectionAttempts: 5,
     });
     socketRef.current = socket;
