@@ -235,7 +235,7 @@ export default function FerryWheelGame({
     } catch {}
 
     const socket = io(socketUrl, {
-      transports: ["websocket", "polling"],
+      transports: ["polling"],
       reconnectionAttempts: 5,
     });
     socketRef.current = socket;

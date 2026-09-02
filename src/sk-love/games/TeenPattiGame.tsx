@@ -260,7 +260,7 @@ export default function TeenPattiGame({
 
     const startPing = Date.now();
     const socket = io(SOCKET_URL, {
-      transports: ["websocket", "polling"],
+      transports: ["polling"],
       reconnectionDelay: 1000,
       reconnectionAttempts: 30,
     });
