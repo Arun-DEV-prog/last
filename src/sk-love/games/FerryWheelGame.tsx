@@ -221,7 +221,7 @@ export default function FerryWheelGame({
   // Socket.io Real-Time Integration
   useEffect(() => {
     const socketUrl =
-      (import.meta as any).env?.VITE_SOCKET_URL || "http://168.144.140.4";
+      (import.meta as any).env?.VITE_SOCKET_URL || "https://168-144-140-4.sslip.io";
 
     const token =
       localStorage.getItem("token") ||

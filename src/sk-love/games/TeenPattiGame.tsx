@@ -108,7 +108,7 @@ const formatCompactBalance = (num: number): string => {
   return `${num}`;
 };
 
-const SOCKET_URL = (import.meta as any).env?.VITE_SOCKET_URL || "http://168.144.140.4";
+const SOCKET_URL = (import.meta as any).env?.VITE_SOCKET_URL || "https://168-144-140-4.sslip.io";
 const TEEN_PATTI_BALANCE_ENDPOINT = "/api/games/teenpatti/balance";
 
 // ─── Main Component ──────────────────────────────────────────────────────────

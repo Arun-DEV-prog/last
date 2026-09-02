@@ -98,7 +98,7 @@ const API_BASE = String(
     import.meta.env.VITE_API_URL ||
     import.meta.env.VITE_BACKEND_URL ||
     import.meta.env.VITE_LARAVEL_URL ||
-    "http://168.144.140.4",
+    "https://168-144-140-4.sslip.io",
 ).replace(/\/+$/, "");
 
 const Avatar: React.FC<{ src?: string | null; name?: string; size?: number }> = ({ src, name, size = 32 }) => {

@@ -1,8 +1,8 @@
 // @ts-nocheck
 // Centralized Laravel API client for SK Love.
-// Primary API: http://168.144.140.4
+// Primary API: https://168-144-140-4.sslip.io
 
-export const DEFAULT_PRIMARY_API = "http://168.144.140.4";
+export const DEFAULT_PRIMARY_API = "https://168-144-140-4.sslip.io";
 export const DEFAULT_BACKUP_API = "";
 
 export function getBackendCandidates(): string[] {
@@ -18,7 +18,7 @@ export function getBackendCandidates(): string[] {
     ? configuredUrl.replace(/\/+$/, "")
     : DEFAULT_PRIMARY_API;
 
-  const backupCandidate = primaryCandidate.includes("168.144.140.4") ? DEFAULT_BACKUP_API : DEFAULT_PRIMARY_API;
+  const backupCandidate = primaryCandidate.includes("168-144-140-4.sslip.io") ? DEFAULT_BACKUP_API : DEFAULT_PRIMARY_API;
 
   const list = [primaryCandidate, backupCandidate, DEFAULT_PRIMARY_API, DEFAULT_BACKUP_API]
     .map((url) => (url ? url.trim().replace(/\/+$/, "") : ""))

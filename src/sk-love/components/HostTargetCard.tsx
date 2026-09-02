@@ -32,7 +32,7 @@ type Totals = { coins: number; hours: number; diamonds: number };
 const API =
   (import.meta as any).env?.VITE_API_BASE_URL ||
   (import.meta as any).env?.VITE_API_URL ||
-  "http://168.144.140.4";
+  "https://168-144-140-4.sslip.io";
 
 const token = () => {
   try { return localStorage.getItem("sk_love_token") || ""; } catch { return ""; }
